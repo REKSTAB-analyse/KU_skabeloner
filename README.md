@@ -88,7 +88,7 @@ Sæt `SKABELON = "ku_rapportskabelon.tex"` i hentechunket (se nedenfor).
 SKABELON <- "ku_rapportskabelon.tex"
 BRANCH   <- "main"  # <- skift kun denne linje, f.eks. til "dev", hvis I tester
 base_url <- paste0(
-  "https://raw.githubusercontent.com/REKSTAB-analyse/KU_skabelon/", BRANCH
+  "https://raw.githubusercontent.com/REKSTAB-analyse/KU_skabeloner/", BRANCH
 )
 source(paste0(base_url, "/hent_skabelon.R"))
 ```
@@ -105,7 +105,7 @@ import urllib.request
 
 SKABELON = "ku_rapportskabelon.tex"
 BRANCH = "main"  # <- skift kun denne linje, f.eks. til "dev", hvis I tester
-base_url = f"https://raw.githubusercontent.com/REKSTAB-analyse/KU_skabelon/{BRANCH}"
+base_url = f"https://raw.githubusercontent.com/REKSTAB-analyse/KU_skabeloner/{BRANCH}"
 exec(urllib.request.urlopen(f"{base_url}/hent_skabelon.py").read())
 ```
 ````
