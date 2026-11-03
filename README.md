@@ -1,4 +1,4 @@
-# KU_skabelon
+# KU_skabeloner
 
 LateX-skabeloner til Quarto, der matcher KU's Word-formater. De bruges i REKSTAB Analyse til sagsnotater og rapporter. 
 
