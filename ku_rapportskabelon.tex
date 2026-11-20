@@ -44,7 +44,9 @@ $header-includes$
 \usepackage{enumitem}
 \usepackage{titlesec}
 \setlist[itemize]{noitemsep, topsep=0pt, partopsep=0pt, parsep=1pt, left=0pt}
-\setcounter{secnumdepth}{0}   % Som i Word-skabelonen: ingen nummerering. Sæt til 3 for at nummerere
+\setcounter{secnumdepth}{%
+  $if(number-sections)$$if(number-depth)$$number-depth$$else$3$endif$$else$0$endif$%
+}
 \setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$3$endif$}
 \setlist[itemize,2]{label=\textopenbullet}
 \setlist[enumerate,1]{leftmargin=36bp, labelindent=0pt, labelwidth=18bp,
