@@ -105,6 +105,7 @@ import urllib.request
 
 SKABELON = "ku_rapportskabelon.tex"
 BRANCH = "main"  # <- skift kun denne linje, f.eks. til "dev", hvis I tester
+OPDATER = False  # <- True: overskriv lokale kopier med seneste fra GitHub
 base_url = f"https://raw.githubusercontent.com/REKSTAB-analyse/KU_skabeloner/{BRANCH}"
 exec(urllib.request.urlopen(f"{base_url}/hent_skabelon.py").read())
 ```
@@ -113,8 +114,9 @@ exec(urllib.request.urlopen(f"{base_url}/hent_skabelon.py").read())
 ### Sådan virker det
 
 - Findes skabelonen og logoet allerede i mappen med '.qmd'-filen, bruges de lokale versioner.
-- Slet filerne for at få den nyeste version hentet.
-- GitHub gemmer filer t op til fem minutter efter ændring. 
+- Sæt `OPDATER = True` i hentechunket for at overskrive de lokale filer med den nyeste version fra GitHub (kun i Python-versionen). Sæt den tilbage til `False` bagefter.
+- Slet filerne for at få den nyeste version hentet (R-versionen).
+- GitHub cacher filer i op til fem minutter efter ændring.
 
 ## Vedligeholdelse
 
