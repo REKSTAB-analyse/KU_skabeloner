@@ -7,7 +7,7 @@ skabelon_mappe = os.path.abspath(
     os.environ.get("QUARTO_DOCUMENT_PATH") or os.getcwd()
 )
 
-FILER = [globals().get("ku_skabelon.tex"), "KU_logo.png"]
+FILER = [globals().get("SKABELON") or "ku_skabelon.tex", "KU_logo.png"]
 
 # True = ignorer lokale kopier og hent seneste version fra GitHub
 opdater = globals().get("OPDATER", False)
