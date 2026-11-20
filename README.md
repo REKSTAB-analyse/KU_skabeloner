@@ -1,6 +1,6 @@
 # KU_skabeloner
 
-LateX-skabeloner til Quarto, der matcher KU's Word-formater. De bruges i REKSTAB Analyse til sagsnotater og rapporter. 
+LaTeX-skabeloner til Quarto, der matcher KU's Word-formater. De bruges i REKSTAB Analyse til sagsnotater og rapporter. 
 
 | Skabelon | Fil | Bruges til |
 |---|---|---|
@@ -60,6 +60,8 @@ format:
         latex_engine: lualatex
         toc: true
         highlight-style: none
+        number-sections: false  # true for at tilføje sektionsnumre
+        number-depth: 3         # valgfri
 execute:
   echo: false
   warning: false
@@ -71,7 +73,9 @@ lang: da
 Sæt `SKABELON = "ku_rapportskabelon.tex"` i hentechunket (se nedenfor).
 
 - '#', '##' og '###' giver overskrift 1, 2 og 3. Alle kommer med i indholdet.
-- Overskrifterne er ikke nummererede, jf. Word-skabelonen. Nummerering skås til med `\setcounter{secnumdepth}{3}` i skabelonen.
+- Overskrifterne er som standard ikke nummererede, jf. Word-skabelonen. Sæt `number-sections: true` for at få sektionsnumre. `number-depth` angiver, hvor dybt der nummereres (standard 3).
+- Er `number-sections: false` eller `number-depth: 0`, tilføjes der ikke sektionsnumre.
+- Enkelte overskrifter kan fravælges med `{.unnumbered}`, f.eks. `## Resumé {.unnumbered}`.
 - '####' findes ikke i Word-skabelonen og har derfor ikke et særligt format.
 
 ## Hentechunket
