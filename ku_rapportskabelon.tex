@@ -44,9 +44,17 @@ $header-includes$
 \usepackage{enumitem}
 \usepackage{titlesec}
 \setlist[itemize]{noitemsep, topsep=0pt, partopsep=0pt, parsep=1pt, left=0pt}
-\setcounter{secnumdepth}{%
-  $if(number-sections)$$if(number-depth)$$number-depth$$else$3$endif$$else$0$endif$%
-}
+% Sektionsnumre: slået fra som standard (som Word-skabelonen).
+% Slås til med number-sections: true i YAML. Dybde: number-depth (std. 3).
+\newif\ifkunummer
+$if(numbersections)$\kunummertrue$endif$
+$if(number-sections)$\kunummertrue$endif$
+\ifkunummer
+  \setcounter{secnumdepth}{%
+    $if(secnumdepth)$$secnumdepth$$elseif(number-depth)$$number-depth$$else$3$endif$}
+\else
+  \setcounter{secnumdepth}{0}
+\fi
 \setcounter{tocdepth}{$if(toc-depth)$$toc-depth$$else$3$endif$}
 \setlist[itemize,2]{label=\textopenbullet}
 \setlist[enumerate,1]{leftmargin=36bp, labelindent=0pt, labelwidth=18bp,
